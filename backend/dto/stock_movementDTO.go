@@ -1,6 +1,7 @@
 package dto
 import "time"
-type CreateStockMovementDTO struct {
+// Crear movimiento de stock
+type StockMovementRequestCreateDTO struct {
     ProductID   string `json:"product_id" binding:"required"`
     Type        string `json:"type" binding:"required"` // "in" o "out"
     Quantity    int    `json:"quantity" binding:"required"`
@@ -8,6 +9,8 @@ type CreateStockMovementDTO struct {
     Note        string `json:"note,omitempty"`
     Timestamp   string `json:"timestamp" binding:"required"` // formato ISO8601
 }
+
+// Respuesta de movimiento
 type StockMovementResponseDTO struct {
     ID          string    `json:"id"`
     ProductID   string    `json:"product_id"`
